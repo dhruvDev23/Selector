@@ -25,6 +25,7 @@
 
 import collections
 import math
+from typing import List, Union
 
 import bitarray
 import numpy as np
@@ -64,7 +65,7 @@ class GridPartition(SelectionBase):
     """
 
     def __init__(
-        self, nbins_axis: int | list[int], bin_method: str = "equisized_independent", random_seed: int = 42
+        self, nbins_axis: Union[int, List[int]], bin_method: str = "equisized_independent", random_seed: int = 42
     ):
         """Initialize class.
 
