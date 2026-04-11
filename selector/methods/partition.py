@@ -65,7 +65,10 @@ class GridPartition(SelectionBase):
     """
 
     def __init__(
-        self, nbins_axis: Union[int, List[int]], bin_method: str = "equisized_independent", random_seed: int = 42
+        self,
+        nbins_axis: Union[int, List[int]],
+        bin_method: str = "equisized_independent",
+        random_seed: int = 42,
     ):
         """Initialize class.
 
@@ -84,7 +87,9 @@ class GridPartition(SelectionBase):
             Seed for random selection of sample points from each bin.
         """
         if not isinstance(nbins_axis, (int, list, np.ndarray)):
-            raise TypeError(f"Number of bins should be integer or list of integers, got {type(nbins_axis)}.")
+            raise TypeError(
+                f"Number of bins should be integer or list of integers, got {type(nbins_axis)}."
+            )
         if not isinstance(random_seed, int):
             raise TypeError(f"The random seed should be integer, got {type(random_seed)}.")
         if not isinstance(bin_method, str):
